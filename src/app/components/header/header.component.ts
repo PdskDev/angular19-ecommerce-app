@@ -6,13 +6,22 @@ import { PrimaryButtonComponent } from '../primary-button/primary-button.compone
   selector: 'app-header',
   imports: [PrimaryButtonComponent],
   template: `
-    <div class="bg-slate-100 px-4 py-3 shadow-md flex justify-between">
-      <span>My Store</span>
-      <app-primary-button [label]="'Sign In'"></app-primary-button>
+    <div
+      class="bg-slate-100 px-4 py-3 shadow-md flex justify-between items-center"
+    >
+      <span class="text-xl">My Store</span>
+      <app-primary-button
+        label="Cart"
+        (btnClicked)="showBtnClicked()"
+      ></app-primary-button>
     </div>
   `,
   styles: `
 
   `,
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  showBtnClicked() {
+    console.log('Button clicked!');
+  }
+}
